@@ -1,0 +1,35 @@
+
+export interface Lesson {
+  id: string;
+  title: string;
+  description: string;
+  icon: string;
+  content: string[];
+}
+
+export const lessons: Lesson[] = [
+  {
+    id: "lesson1",
+    title: "Saluti e Presentazioni",
+    description: "Impara a salutare e presentarti in italiano.",
+    icon: "👋",
+    content: [
+      "Ciao!",
+      "Buongiorno!",
+      "Mi chiamo Luca.",
+      "Piacere di conoscerti!"
+    ]
+  },
+  {
+    id: "lesson2",
+    title: "Numeri e Colori",
+    description: "I numeri e i colori base in italiano.",
+    icon: "🔢",
+    content: [
+      "Uno, due, tre",
+      "Rosso, verde, blu",
+      "Quanto costa?",
+      "È molto bello!"
+    ]
+  }
+];

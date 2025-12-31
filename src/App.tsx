@@ -1,6 +1,7 @@
 
-import LandingPage from "./components/LandingPage";
-
-export default function App() {
-  return <LandingPage />;
-}
+<LandingPage 
+  onStartTrial={() => setActiveTab('learn')} 
+  onViewPrivacy={() => setActiveTab('privacy')}
+  onViewTerms={() => setActiveTab('terms')}
+  onViewRefund={() => setActiveTab('refund')}
+/>

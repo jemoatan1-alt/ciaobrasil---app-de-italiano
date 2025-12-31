@@ -1,4 +1,7 @@
 
+<main className="flex-1 overflow-y-auto p-4 md:p-8">
+  {selectedLesson ? (
+    ...
 {selectedLesson ? (
   <div className="max-w-4xl mx-auto space-y-12 animate-in fade-in slide-in-from-bottom-6">
     <button 
@@ -43,3 +46,8 @@
 ) : (
   <LessonGrid onSelectLesson={setSelectedLesson} />
 )}
+) : (
+  <LessonGrid
+    onselectlesson={setSelectedLesson} />
+  )}
+</main>main>

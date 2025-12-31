@@ -1,24 +1,23 @@
 
-import React from 'react';
-import { Lesson } from '../types';
+import React from "react";
+import { lessons, Lesson } from "../data/lessons";
 
-interface Props {
+interface LessonGridProps {
   onSelectLesson: (lesson: Lesson) => void;
 }
 
-const LessonGrid: React.FC<Props> = ({ onSelectLesson }) => {
-  const lessons: Lesson[] = [
-    { title: 'Lezione 1', description: 'Base', icon: '📘', content: ['Ciao', 'Buongiorno'] },
-    { title: 'Lezione 2', description: 'Intermedio', icon: '📗', content: ['Come stai?', 'Grazie'] }
-  ];
-
+const LessonGrid: React.FC<LessonGridProps> = ({ onSelectLesson }) => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
+    <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6 p-4">
       {lessons.map((lesson) => (
-        <div key={lesson.title} className="p-4 border rounded-lg cursor-pointer hover:bg-emerald-50" onClick={() => onSelectLesson(lesson)}>
-          <div className="text-4xl">{lesson.icon}</div>
-          <h2 className="font-bold">{lesson.title}</h2>
-          <p className="text-gray-500">{lesson.description}</p>
+        <div
+          key={lesson.id}
+          onClick={() => onSelectLesson(lesson)}
+          className="cursor-pointer p-6 bg-white dark:bg-slate-900 rounded-2xl shadow hover:shadow-lg transition"
+        >
+          <div className="text-5xl">{lesson.icon}</div>
+          <h2 className="text-xl font-bold mt-4">{lesson.title}</h2>
+          <p className="text-gray-500 mt-2">{lesson.description}</p>
         </div>
       ))}
     </div>
